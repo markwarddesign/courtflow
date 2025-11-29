@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(243 244 246);
+}
+
+/* Print Styles */
+@media print {
+  .print-hidden, .fixed-action-bar {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white;
+    margin: 0;
+  }
+  
+  @page {
+    size: 11in 8.5in;
+    margin: 0.5in;
+  }
+  
+  .page-container {
+    width: 100%;
+    max-width: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Ensure table inputs/textareas show content cleanly */
+  textarea.print\:border-none, 
+  input.print\:border-none {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    resize: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Ensure table headers print correctly */
+  table thead th {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Gradient Button Styles */
+.gradient-btn {
+  background: linear-gradient(to right, rgb(220 38 38), rgb(185 28 28));
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.2s;
+  transform: scale(1);
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(to right, rgb(185 28 28), rgb(153 27 27));
+  transform: scale(1.05);
+}
+
+.gradient-btn-secondary {
+  background: linear-gradient(to right, rgb(31 41 55), rgb(0 0 0));
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.2s;
+  transform: scale(1);
+}
+
+.gradient-btn-secondary:hover {
+  background: linear-gradient(to right, rgb(0 0 0), rgb(17 24 39));
+  transform: scale(1.05);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: rgb(220 38 38);
+}
+
+/* Input Focus Styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgb(239 68 68);
+  box-shadow: 0 0 0 2px rgb(239 68 68 / 0.5);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 150ms, background-color 150ms, border-color 150ms;
+}
